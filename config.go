@@ -76,7 +76,7 @@ func convertToPackageInfo(config *Config) []PackageInfo {
 				Name:         packageName,
 				Repo:         packageDetails.Repo,
 				CanonicalURL: config.URL + "/" + packageName,
-				GodocURL:     "https://godoc.org/" + packageDetails.Repo,
+				GodocURL:     "https://godoc.org/" + config.URL + "/" + packageName,
 			},
 		)
 	}
