@@ -1,0 +1,19 @@
+package main
+
+import (
+	"html/template"
+)
+
+var packageTemplate = template.Must(template.New("package").Parse(`
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="go-import" content="{{ .CanonicalURL }} git https://{{ .Repo }}">
+        <meta name="go-source" content="{{ .CanonicalURL }} https://{{ .Repo }} https://{{ .Repo }}/tree/master{/dir} https://{{ .Repo }}/tree/master{/dir}/{file}#L{line}">
+        <meta http-equiv="refresh" content="0; url={{ .GodocURL }}">
+    </head>
+    <body>
+        Nothing to see here. Please <a href="{{ .GodocURL }}">move along</a>.
+    </body>
+</html>
+`))
